@@ -1,0 +1,19 @@
+.league-btn {
+  background: transparent;
+  border-color: transparent;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  line-height: 1;
+  outline-color: #e0fcff;
+
+  &:hover {
+    color: #2caeba;
+    box-shadow: 0 2px #2caeba;
+  }
+}
+
+.active {
+  color: #2caeba;
+  box-shadow: 0 2px #2caeba;
+}

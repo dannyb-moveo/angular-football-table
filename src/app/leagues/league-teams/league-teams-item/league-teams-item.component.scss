@@ -1,0 +1,25 @@
+:host {
+  width: 100%;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+
+  .img-container {
+    flex: 1;
+
+    img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  h3 {
+    flex: 1;
+    flex-wrap: wrap;
+  }
+}
