@@ -1,6 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Data, Params } from '@angular/router';
 import { LeaguesService } from 'src/app/leagues.service';
+import { Team } from 'src/app/team.model';
+
+interface Test {
+  strTeam: string;
+  strTeamBadge: string;
+}
+
+interface Bla {
+  teams: Team[];
+}
 
 @Component({
   selector: 'app-league-teams',
@@ -8,8 +18,7 @@ import { LeaguesService } from 'src/app/leagues.service';
   styleUrls: ['./league-teams.component.scss'],
 })
 export class LeagueTeamsComponent implements OnInit {
-  teams = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  teamsObj: any;
+  teams: Team[] = [];
   league: string = '';
 
   constructor(
@@ -20,11 +29,10 @@ export class LeagueTeamsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.league = params['league'];
-      this.leagueService.getData(this.league).subscribe((data) => {
-        this.teamsObj = data;
-        this.teamsObj = this.teamsObj.teams;
-        console.log(this.teamsObj);
+      this.leagueService.getData(this.league).subscribe((response) => {
+        this.teams = response.teams;
       });
+      this.leagueService.setIsInitial(false);
     });
   }
 }

@@ -9,6 +9,7 @@ import { LeagueTeamsComponent } from './leagues/league-teams/league-teams.compon
 import { LeagueTeamsItemComponent } from './leagues/league-teams/league-teams-item/league-teams-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { LeagueInitialComponent } from './leagues/league-initial/league-initial.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
     LeagueItemComponent,
     LeagueTeamsComponent,
     LeagueTeamsItemComponent,
+    LeagueInitialComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],

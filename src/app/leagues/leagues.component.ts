@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { LeaguesService } from '../leagues.service';
 
 @Component({
   selector: 'app-leagues',
   templateUrl: './leagues.component.html',
-  styleUrls: ['./leagues.component.scss']
+  styleUrls: ['./leagues.component.scss'],
 })
 export class LeaguesComponent implements OnInit {
-
-  constructor() { }
+  isInitial: boolean;
+  constructor(private leaguesService: LeaguesService) {}
 
   ngOnInit(): void {
+    this.leaguesService.setIsInitial(true);
   }
-
 }

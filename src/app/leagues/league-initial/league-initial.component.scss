@@ -1,0 +1,19 @@
+.wrapper {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  h3 {
+    span {
+      color: #2caeba;
+    }
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+}

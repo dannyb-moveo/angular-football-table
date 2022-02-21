@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LeaguesService } from './leagues.service';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +7,7 @@ import { LeaguesService } from './leagues.service';
 })
 export class AppComponent implements OnInit {
   title = 'angular-football-tables';
-  constructor(private leaguesService: LeaguesService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    // this.leaguesService.getData().subscribe((data) => {
-    //   console.log(data);
-    // });
-  }
+  ngOnInit(): void {}
 }
