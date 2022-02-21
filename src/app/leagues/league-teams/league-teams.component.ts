@@ -1,17 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Data, Params } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { LeaguesService } from 'src/app/leagues.service';
 import { Team } from 'src/app/team.model';
-
-interface Test {
-  strTeam: string;
-  strTeamBadge: string;
-}
-
-interface Bla {
-  teams: Team[];
-}
-
 @Component({
   selector: 'app-league-teams',
   templateUrl: './league-teams.component.html',
