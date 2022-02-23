@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faFutbol } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from './_services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { faFutbol } from '@fortawesome/free-solid-svg-icons';
 export class AppComponent implements OnInit {
   title = 'angular-football-tables';
   futbol = faFutbol;
-  constructor() {}
+  constructor(public authService: AuthService) {}
 
   ngOnInit(): void {}
 }
