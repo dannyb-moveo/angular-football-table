@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LeaguesService } from '../leagues.service';
+import { LeaguesService } from '../_services/leagues.service';
 
 @Component({
   selector: 'app-leagues',

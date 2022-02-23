@@ -1,5 +1,5 @@
-<div class="container">
-  <h3>{{ singleTeam["strTeam"] }}</h3>
+<div class="container" (click)="add()">
+  <p>{{ singleTeam["strTeam"] }}</p>
 
   <div class="img-container">
     <img [src]="singleTeam['strTeamBadge']" alt="" />

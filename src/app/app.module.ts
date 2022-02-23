@@ -10,6 +10,10 @@ import { LeagueTeamsItemComponent } from './leagues/league-teams/league-teams-it
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { LeagueInitialComponent } from './leagues/league-initial/league-initial.component';
+import { LeagueFavoriteTeamsComponent } from './leagues/league-favorite-teams/league-favorite-teams.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,8 +24,16 @@ import { LeagueInitialComponent } from './leagues/league-initial/league-initial.
     LeagueTeamsComponent,
     LeagueTeamsItemComponent,
     LeagueInitialComponent,
+    LeagueFavoriteTeamsComponent,
+    LoginComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FontAwesomeModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

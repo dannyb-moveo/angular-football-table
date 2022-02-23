@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <h3>Your top 5 choices:</h3>
+  <div class="teams">
+    <div
+      class="team"
+      *ngFor="let team of leaguesService.favoriteTeams; let i = index"
+    >
+      <p>{{ team.strTeam }}</p>
+      <img [src]="team.strTeamBadge" alt="team" />
+      <button
+        type="button"
+        class="delete"
+        title="delete team"
+        (click)="removeTeam(i)"
+      >
+        <fa-icon [icon]="faTrash"></fa-icon>
+      </button>
+    </div>
+  </div>
+</div>

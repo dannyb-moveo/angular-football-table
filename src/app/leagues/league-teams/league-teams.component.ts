@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { LeaguesService } from 'src/app/leagues.service';
-import { Team } from 'src/app/team.model';
+import { LeaguesService } from 'src/app/_services/leagues.service';
+import { Team } from 'src/app/_models/team.model';
 @Component({
   selector: 'app-league-teams',
   templateUrl: './league-teams.component.html',

@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { LeaguesService } from 'src/app/leagues.service';
+import { LeaguesService } from 'src/app/_services/leagues.service';
 
 @Component({
   selector: 'app-league-initial',

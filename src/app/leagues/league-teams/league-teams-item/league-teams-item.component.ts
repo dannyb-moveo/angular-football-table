@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Team } from 'src/app/team.model';
+import { LeaguesService } from 'src/app/_services/leagues.service';
+import { Team } from 'src/app/_models/team.model';
 
 @Component({
   selector: 'app-league-teams-item',
@@ -9,7 +10,11 @@ import { Team } from 'src/app/team.model';
 export class LeagueTeamsItemComponent implements OnInit {
   @Input() singleTeam: Team;
 
-  constructor() {}
+  constructor(private leaguesService: LeaguesService) {}
 
   ngOnInit(): void {}
+
+  add(): void {
+    this.leaguesService.addFavoriteTeam(this.singleTeam);
+  }
 }

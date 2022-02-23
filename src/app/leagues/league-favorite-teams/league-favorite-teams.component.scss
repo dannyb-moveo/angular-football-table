@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  margin-bottom: 5rem;
+  .teams {
+    display: flex;
+    gap: 2rem;
+
+    .team {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      img {
+        width: 75px;
+        height: 75px;
+      }
+
+      .delete {
+        background: transparent;
+        border: transparent;
+        cursor: pointer;
+      }
+    }
+  }
+}
