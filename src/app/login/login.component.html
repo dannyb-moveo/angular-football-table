@@ -1,3 +1,18 @@
-<label for="email">Email</label>
-<input type="email" id="email" [(ngModel)]="email" />
-<button type="button" (click)="handleLoginClick()">login</button>
+<div class="section">
+  <form class="form">
+    <h3>login</h3>
+    <div class="form-row">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        id="email"
+        [(ngModel)]="email"
+        class="form-input"
+        name="email"
+      />
+    </div>
+    <button type="button" (click)="handleLoginClick()" class="btn">
+      Login
+    </button>
+  </form>
+</div>
