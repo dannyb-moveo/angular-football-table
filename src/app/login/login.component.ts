@@ -18,7 +18,8 @@ export class LoginComponent implements OnInit {
     this.authService.saveUserToStorage(this.email);
     if (this.authService.authUser()) {
       this.router.navigate(['/leagues']);
+    } else {
+      alert('Wrong email. To login type: danny');
     }
-    //else
   }
 }
