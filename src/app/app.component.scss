@@ -3,8 +3,22 @@
   max-width: 1280px;
   margin: 5rem auto;
 
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 7rem;
+
+    @media screen and (max-width: 992px) {
+      & {
+        flex-direction: column;
+        gap: 3rem;
+        margin-bottom: 5rem;
+      }
+    }
+  }
+
   .title {
-    margin-bottom: 4rem;
     text-align: center;
   }
 }

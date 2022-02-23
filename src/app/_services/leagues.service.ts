@@ -36,5 +36,6 @@ export class LeaguesService {
 
   removeFavoriteTeam(index: number) {
     this.favoriteTeams.splice(index, 1);
+    this.storageService.setFavoriteTeams(this.favoriteTeams);
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faFutbol } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'angular-football-tables';
+  futbol = faFutbol;
   constructor() {}
 
   ngOnInit(): void {}

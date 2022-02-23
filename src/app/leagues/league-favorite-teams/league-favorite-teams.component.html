@@ -1,19 +1,26 @@
 <div class="wrapper">
-  <h3>Your top 5 choices:</h3>
+  <h4 *ngIf="leaguesService.favoriteTeams.length; else fillFavorite">
+    Your favorite teams (5 max):
+  </h4>
+  <ng-template #fillFavorite>
+    <h4>Click on any team to add it to your <span>favorites</span></h4>
+  </ng-template>
   <div class="teams">
     <div
       class="team"
       *ngFor="let team of leaguesService.favoriteTeams; let i = index"
     >
-      <p>{{ team.strTeam }}</p>
+      <!-- <p>
+        {{ team.strTeam }}
+      </p> -->
       <img [src]="team.strTeamBadge" alt="team" />
       <button
         type="button"
         class="delete"
-        title="delete team"
+        title="remove team"
         (click)="removeTeam(i)"
       >
-        <fa-icon [icon]="faTrash"></fa-icon>
+        <fa-icon [icon]="faTrash"></fa-icon> remove
       </button>
     </div>
   </div>

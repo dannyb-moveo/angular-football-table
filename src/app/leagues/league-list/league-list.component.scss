@@ -5,11 +5,19 @@
   justify-content: center;
 }
 
+.underline {
+  width: 100%;
+}
+
+.bottom {
+  margin-bottom: 5rem;
+}
+
 .btn-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 4rem;
   gap: 1rem;
+  margin: 0.5rem 0;
 
   @media screen and (max-width: 992px) {
     flex-direction: column;
