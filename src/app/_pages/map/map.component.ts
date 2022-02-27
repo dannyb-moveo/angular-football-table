@@ -5,14 +5,14 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { MapService } from '../_services/map.service';
+import { MapService } from '../../_services/map.service';
 
 import {
   faHouseUser,
   faBuilding,
   faLongArrowAltRight,
 } from '@fortawesome/free-solid-svg-icons';
-import { RouteInterface } from '../_models/route.interface';
+import { RouteInterface } from '../../_models/route.interface';
 
 @Component({
   selector: 'app-map',
