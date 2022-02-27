@@ -23,30 +23,29 @@ export class MapService {
       libraries: ['places'],
     });
 
-    loader.load().then(() => {
-      this.map = new google.maps.Map(mapElement.nativeElement, {
-        mapId: '29e267eeeb203796',
-        center: { lat: 31.0461, lng: 34.8516 },
-        zoom: 6,
-      } as google.maps.MapOptions);
+    loader
+      .load()
+      .then(() => {
+        this.map = new google.maps.Map(mapElement.nativeElement, {
+          mapId: '29e267eeeb203796',
+          center: { lat: 31.0461, lng: 34.8516 },
+          zoom: 6,
+        } as google.maps.MapOptions);
 
-      // Moveo Marker
-      this.setMoveoMarker();
+        // Moveo Marker
+        this.setMoveoMarker();
 
-      // Autocomplete
-      this.setAutocomplete(inputElement);
-    });
+        // Autocomplete
+        this.setAutocomplete(inputElement);
+      })
+      .catch((e) => {
+        console.log('map load request failed due to', e);
+      });
   };
 
   setMoveoMarker = (): void => {
     this.moveoMarker = new google.maps.Marker({
       position: { lat: 32.064582, lng: 34.7718053 },
-      // label: {
-      //   color: '#00aaff',
-      //   fontWeight: 'bold',
-      //   fontSize: '14px',
-      //   text: 'Moveo Group',
-      // },
       icon: {
         url: 'https://i.ibb.co/KWVW4QZ/imageedit-4-3250376453.png',
         scaledSize: new google.maps.Size(50, 50),
@@ -54,11 +53,11 @@ export class MapService {
       map: this.map,
     });
 
-    // const infowindow = new google.maps.InfoWindow({
-    //   content: 'Welcome to stackoverflow!',
-    // });
+    const infowindow = new google.maps.InfoWindow({
+      content: 'Moveo Group Offices',
+    });
 
-    // infowindow.open(this.map, this.moveoMarker);
+    infowindow.open(this.map, this.moveoMarker);
   };
 
   setAutocomplete = (inputElement: ElementRef): void => {
