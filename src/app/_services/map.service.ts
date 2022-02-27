@@ -1,5 +1,6 @@
 import { ElementRef, Injectable } from '@angular/core';
 import { Loader } from '@googlemaps/js-api-loader';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +18,7 @@ export class MapService {
 
   initMap = (mapElement: ElementRef, inputElement: ElementRef): void => {
     const loader = new Loader({
-      apiKey: 'AIzaSyC2zef2gvTNhtRpObrrlA-MM9zJZOABS5k',
+      apiKey: environment.GOOGLE_API_KEY,
       version: 'weekly',
       libraries: ['places'],
     });
