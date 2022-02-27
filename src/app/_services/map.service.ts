@@ -1,6 +1,7 @@
 import { ElementRef, Injectable } from '@angular/core';
 import { Loader } from '@googlemaps/js-api-loader';
 import { environment } from 'src/environments/environment';
+import { RouteInterface } from '../_models/route.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +11,11 @@ export class MapService {
   autocomplete: google.maps.places.Autocomplete;
   moveoMarker: google.maps.Marker;
   autocompleteMarker: google.maps.Marker;
+  markers: google.maps.Marker[] = [];
+  routeDetails: RouteInterface = {
+    distance: '',
+    duration: '',
+  };
 
   directionsService: google.maps.DirectionsService;
   directionsRenderer: google.maps.DirectionsRenderer;
@@ -27,7 +33,6 @@ export class MapService {
       .load()
       .then(() => {
         this.map = new google.maps.Map(mapElement.nativeElement, {
-          mapId: '29e267eeeb203796',
           center: { lat: 31.0461, lng: 34.8516 },
           zoom: 6,
         } as google.maps.MapOptions);
@@ -71,9 +76,10 @@ export class MapService {
     this.autocomplete.bindTo('bounds', this.map);
 
     // Initialize Autocomplete Marker
-    this.autocompleteMarker = new google.maps.Marker({ map: this.map });
 
     this.autocomplete.addListener('place_changed', () => {
+      this.autocompleteMarker = new google.maps.Marker({ map: this.map });
+      this.markers.push(this.autocompleteMarker);
       this.autocompleteMarker.setVisible(false);
 
       const place = this.autocomplete.getPlace();
@@ -95,10 +101,12 @@ export class MapService {
 
       this.autocompleteMarker.setPosition(place.geometry.location);
       this.autocompleteMarker.setVisible(true);
+      // clear input
+      inputElement.nativeElement.value = '';
     });
   };
 
-  homeToWorkRoute = (): void => {
+  homeToWorkRoute = () => {
     this.directionsService = new google.maps.DirectionsService();
     this.directionsRenderer = new google.maps.DirectionsRenderer();
 
@@ -112,7 +120,39 @@ export class MapService {
       })
       .then((response) => {
         this.directionsRenderer.setDirections(response);
+        this.routeDetails.distance = response.routes[0].legs[0].distance?.text!;
+        this.routeDetails.duration = response.routes[0].legs[0].duration?.text!;
       })
       .catch((e) => window.alert('Directions request failed due to ' + status));
+  };
+
+  removeAllMarkers = (): void => {
+    this.hideMarkers();
+    this.markers = [];
+  };
+
+  hideMarkers = (): void => {
+    this.markers.map((marker) => {
+      marker.setMap(null);
+    });
+  };
+
+  showMarkers = (): void => {
+    this.markers.map((marker) => {
+      marker.setMap(this.map);
+    });
+  };
+
+  changeMapId = (mapElement: ElementRef, style: string): void => {
+    const mapId = style === 'default' ? '' : '29e267eeeb203796';
+    this.map = new google.maps.Map(mapElement.nativeElement, {
+      mapId: mapId,
+      center: { lat: 31.0461, lng: 34.8516 },
+      zoom: 6,
+    } as google.maps.MapOptions);
+  };
+
+  getRouteDetails = (): RouteInterface => {
+    return this.routeDetails;
   };
 }

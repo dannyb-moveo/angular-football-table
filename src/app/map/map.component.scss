@@ -10,23 +10,73 @@
     border: 1px solid #bcccdc;
   }
 
-  .wrapper {
+  .btn-container {
     display: flex;
-    gap: 0.5rem;
-    margin-bottom: 0.25rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
 
-    .search {
-      @extend %btn-shared;
-      width: 200px;
+    .btn {
+      display: inline-block;
+      cursor: pointer;
+      color: #2cb1bc;
+      border: transparent;
+      background: transparent;
+      letter-spacing: 1px;
     }
 
-    .directions {
-      @extend %btn-shared;
+    .btn-map {
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      background: #2cb1bc;
+      color: white;
+      border: transparent;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%),
+        0 2px 4px -1px rgb(0 0 0 / 6%);
+    }
+
+    .light {
+      background: #f3f3f3;
+      color: #333;
+    }
+
+    .autocomplete {
+      display: flex;
+
+      .search {
+        @extend %btn-shared;
+        width: 200px;
+      }
+
+      .directions {
+        @extend %btn-shared;
+        display: flex;
+        gap: 0.5rem;
+        background: #2caeba;
+        color: white;
+        cursor: pointer;
+      }
+    }
+    .markers-btn {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .map-style-btn {
       display: flex;
       gap: 0.5rem;
-      background: #2caeba;
-      color: white;
-      cursor: pointer;
     }
+
+    @media screen and (max-width: 992px) {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+
+  .route-details {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
   }
 }

@@ -1,16 +1,58 @@
 <div class="container">
-  <div class="wrapper">
-    <input type="text" placeholder="Search Google Maps" class="search" #input />
-    <button
-      type="button"
-      (click)="showRoute()"
-      class="directions"
-      title="home to work route"
-    >
-      <fa-icon [icon]="faHouse"></fa-icon>
-      <fa-icon [icon]="faArrowRight"></fa-icon>
-      <fa-icon [icon]="faBuilding"></fa-icon>
-    </button>
+  <div class="btn-container">
+    <div class="autocomplete">
+      <input
+        type="text"
+        placeholder="Search Google Maps"
+        class="search"
+        #input
+      />
+      <button
+        type="button"
+        (click)="showRoute()"
+        class="directions"
+        title="home to work route"
+      >
+        <fa-icon [icon]="faHouse"></fa-icon>
+        <fa-icon [icon]="faArrowRight"></fa-icon>
+        <fa-icon [icon]="faBuilding"></fa-icon>
+      </button>
+    </div>
+
+    <div class="map-style-btn">
+      <button
+        class="btn btn-map"
+        type="button"
+        (click)="changeMapId('default')"
+      >
+        Default Style
+      </button>
+      <button
+        class="btn btn-map light"
+        type="button"
+        (click)="changeMapId('light')"
+      >
+        Light Style
+      </button>
+    </div>
+
+    <div class="markers-btn">
+      <button class="btn" type="button" (click)="hideMarkers()">
+        Hide Markers
+      </button>
+      <button class="btn" type="button" (click)="showMarkers()">
+        Show Markers
+      </button>
+      <button class="btn" type="button" (click)="removeMarkers()">
+        Remove Markers
+      </button>
+    </div>
   </div>
+
   <div class="map" #map></div>
+
+  <div class="route-details" *ngIf="routeDetails">
+    <p>Duration: {{ routeDetails.duration }}</p>
+    <p>Distance: {{ routeDetails.distance }}</p>
+  </div>
 </div>

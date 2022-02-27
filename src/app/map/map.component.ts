@@ -12,6 +12,7 @@ import {
   faBuilding,
   faLongArrowAltRight,
 } from '@fortawesome/free-solid-svg-icons';
+import { RouteInterface } from '../_models/route.interface';
 
 @Component({
   selector: 'app-map',
@@ -21,6 +22,7 @@ import {
 export class MapComponent implements OnInit, AfterViewInit {
   @ViewChild('map') mapElement: ElementRef;
   @ViewChild('input') inputElement: ElementRef;
+  routeDetails: RouteInterface;
   faHouse = faHouseUser;
   faBuilding = faBuilding;
   faArrowRight = faLongArrowAltRight;
@@ -35,5 +37,20 @@ export class MapComponent implements OnInit, AfterViewInit {
 
   showRoute = (): void => {
     this.mapService.homeToWorkRoute();
+    this.routeDetails = this.mapService.getRouteDetails();
+  };
+
+  removeMarkers = () => {
+    this.mapService.removeAllMarkers();
+  };
+  hideMarkers = () => {
+    this.mapService.hideMarkers();
+  };
+  showMarkers = () => {
+    this.mapService.showMarkers();
+  };
+
+  changeMapId = (style: string) => {
+    this.mapService.changeMapId(this.mapElement, style);
   };
 }
