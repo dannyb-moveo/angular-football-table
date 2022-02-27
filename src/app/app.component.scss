@@ -3,6 +3,25 @@
   max-width: 1280px;
   margin: 5rem auto;
 
+  .btn-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    .btn {
+      padding: 0.5rem 1rem;
+      display: inline-block;
+      cursor: pointer;
+      background: #2cb1bc;
+      color: white;
+      border: transparent;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%),
+        0 2px 4px -1px rgb(0 0 0 / 6%);
+      border-radius: 0.25rem;
+    }
+  }
+
   .wrapper {
     display: flex;
     align-items: center;

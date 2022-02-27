@@ -1,0 +1,32 @@
+.container {
+  height: 50vh;
+  .map {
+    height: 100%;
+  }
+
+  %btn-shared {
+    padding: 0.375rem 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #bcccdc;
+  }
+
+  .wrapper {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+
+    .search {
+      @extend %btn-shared;
+      width: 200px;
+    }
+
+    .directions {
+      @extend %btn-shared;
+      display: flex;
+      gap: 0.5rem;
+      background: #2caeba;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}

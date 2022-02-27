@@ -14,6 +14,7 @@ import { LeagueFavoriteTeamsComponent } from './leagues/league-favorite-teams/le
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FormsModule } from '@angular/forms';
     LeagueInitialComponent,
     LeagueFavoriteTeamsComponent,
     LoginComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,

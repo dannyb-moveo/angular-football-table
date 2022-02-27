@@ -1,4 +1,8 @@
 <section class="section">
+  <div class="btn-container">
+    <button type="button" routerLink="/" class="btn">Home</button>
+    <button type="button" routerLink="/map" class="btn">Map</button>
+  </div>
   <div class="wrapper" [ngClass]="{ column: !authService.authUser() }">
     <div class="title">
       <h1>Football Table <fa-icon [icon]="futbol"></fa-icon></h1>
