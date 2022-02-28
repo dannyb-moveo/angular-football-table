@@ -27,6 +27,7 @@ export class MapService {
       apiKey: environment.GOOGLE_API_KEY,
       version: 'weekly',
       libraries: ['places'],
+      /// this is a test
     });
 
     loader
