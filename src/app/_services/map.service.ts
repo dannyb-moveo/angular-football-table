@@ -33,8 +33,8 @@ export class MapService {
       .load()
       .then(() => {
         this.map = new google.maps.Map(mapElement.nativeElement, {
-          center: { lat: 31.0461, lng: 34.8516 },
-          zoom: 6,
+          center: { lat: 32.064582, lng: 34.7718053 },
+          zoom: 15,
         } as google.maps.MapOptions);
 
         // Moveo Marker
